@@ -61,4 +61,22 @@ Alive(Aoi).
 Alive(Sumi).
 Alive(Kiyo).
 Alive(Naho).
-Alive(Goto).    
+Alive(Goto).
+
+%Teacher_A_of_B
+Teacher(Kagaya, Amane).
+Teacher(Kagaya, Hinaki).
+Teacher(Kagaya, Nichika).
+Teacher(Kagaya, Kiriya).
+Teacher(Kagaya, Kanata).
+Teacher(Zenitsu, Gyomei).
+Teacher(Shinjuro, Kyojuro).
+Teacher(Sakonji, Kanao).
+Teacher(Sakonji, Tanjiro).
+Teacher(Sakonji, Zenitsu).
+Teacher(Sakonji, Inosuke).
+Teacher(Sanemi, Genya).
+Teacher(Aoi, Sumi).
+Teacher(Aoi, Kiyo).
+Teacher(Aoi, Naho)
+
