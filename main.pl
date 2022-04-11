@@ -80,3 +80,55 @@ Teacher(Aoi, Sumi).
 Teacher(Aoi, Kiyo).
 Teacher(Aoi, Naho)
 
+%rank
+Rank(Kagaya, 1).
+Rank(Kanae, 1).
+Rank(Jigoro, 1).
+Rank(Kyojuro, 1).
+Rank(Shinjuro, 1).
+Rank(Sakonji, 1).
+Rank(Mitsuri, 2).
+Rank(Obanai, 2).
+Rank(Sanemi, 2).
+Rank(Gyomei, 2).
+Rank(Muichiro, 2).
+Rank(Shinobu, 2).
+Rank(Tengen, 3).
+Rank(Genya, 3).
+Rank(Amane, 4).
+Rank(Hinaki, 4).
+Rank(Nichika, 4).
+Rank(Kiriya, 4).
+Rank(Kanata, 4).
+Rank(Kanao, 4).
+Rank(Tanjiro, 4).
+Rank(Zenitsu, 4).
+Rank(Inosuke, 4).
+Rank(Aoi, 4).
+Rank(Murata, 5).
+Rank(Ozaki, 5).
+Rank(Sumi, 6).
+Rank(Kiyo, 6).
+Rank(Naho, 6).
+Rank(Goto, 6).
+
+%Style
+Style(Giyu, Water).
+Style(Mitsuri, Love).
+Style(Obanai, Serpant).
+Style(Sanemi, Wind).
+Style(Gyomei, Stone).
+Style(Muichiro, Mist).
+Style(Shinobu, Insect).
+Style(Kanae, Flower).
+Style(Sakonji, Water).
+Style(Jigoro, Thunder).
+Style(Kyojuro, Flame).
+Style(Shinjuro, Flame).
+Style(Tengen, Sound).
+Style(Kanao, Flower).
+Style(Tanjiro, Sun).
+Style(Tanjiro, Water).
+Style(Zenitsu, Thunder).
+Style(Inosuke, Beast).
+Style(Murata, Water).
