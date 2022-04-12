@@ -157,6 +157,7 @@ list_stu(X,Y) :- findall(A, (teacher(X,A)), Y). %find_all_stundent_in_teacher
 rank_stud_in_teacher(X,Y) :- findall(B, (teacher(X,A), rank(A,B)), Y). %list_of_rank_in_that_teacher
 
 
-same_teacher_style(X,Y) :- demonslayer(X), demonslayer(Y), teacher(X,Z), style(Z,Y).
-higher_rank(X,Y) :- demonslayer(X), demonslayer(Y), X\=Y, rank(X,A), rank(Y,B), A>B.
-same_teacher_higher(X,Y,Z) :- demonslayer(X), demonslayer(Y), demonslayer(Z), teacher(X,Y), teacher(X,Z), higherrank(Y,Z).
+same_teacher_style(X,Y) :- teacher(X,Z), style(Z,Y).
+higher_rank(X,Y) :- rank(X,A), rank(Y,B), A>B.
+same_teacher_higher(X,Y,Z) :- teacher(X,Y), teacher(X,Z), higherrank(Y,Z).
+most_rank_in_teacher(X,Y) :- lowest_rank(X,A), rank(Y,A), teacher(X,Y).
