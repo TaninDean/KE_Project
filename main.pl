@@ -1,152 +1,159 @@
-DemonSlayer(Kagaya).
-DemonSlayer(Amane)
-DemonSlayer(Hinaki).
-DemonSlayer(Nichika).
-DemonSlayer(Kiriya).
-DemonSlayer(Kanata).
-DemonSlayer(Giyu).
-DemonSlayer(Mitsuri).
-DemonSlayer(Obanai).
-DemonSlayer(Sanemi).
-DemonSlayer(Gyomei).
-DemonSlayer(Muichiro).
-DemonSlayer(Shinobu).
-DemonSlayer(Kanae).
-DemonSlayer(Sakonji).
-DemonSlayer(Jigoro).
-DemonSlayer(Kyojuro).
-DemonSlayer(Shinjuro).
-DemonSlayer(Tengen).
-DemonSlayer(Kanao).
-DemonSlayer(Tanjiro).
-DemonSlayer(Zenitsu).
-DemonSlayer(Inosuke).
-DemonSlayer(Genya).
-DemonSlayer(Murata).
-DemonSlayer(Ozaki).
-DemonSlayer(Aoi).
-DemonSlayer(Sumi).
-DemonSlayer(Kiyo).
-DemonSlayer(Naho).
-DemonSlayer(Goto).
+demonslayer(kagaya).
+demonslayer(amane).
+demonslayer(hinaki).
+demonslayer(nichika).
+demonslayer(kiriya).
+demonslayer(kanata).
+demonslayer(giyu).
+demonslayer(mitsuri).
+demonslayer(obanai).
+demonslayer(sanemi).
+demonslayer(gyomei).
+demonslayer(muichiro).
+demonslayer(shinobu).
+demonslayer(kanae).
+demonslayer(sakonji).
+demonslayer(jigoro).
+demonslayer(kyojuro).
+demonslayer(shinjuro).
+demonslayer(tengen).
+demonslayer(kanao).
+demonslayer(tanjiro).
+demonslayer(zenitsu).
+demonslayer(inosuke).
+demonslayer(genya).
+demonslayer(murata).
+demonslayer(ozaki).
+demonslayer(aoi).
+demonslayer(sumi).
+demonslayer(kiyo).
+demonslayer(naho).
 
-Dead(Kagaya).
-Dead(Amane).
-Dead(Hinaki).
-Dead(Nichika).
-Dead(Mitsuri).
-Dead(Obanai).
-Dead(Gyomei).
-Dead(Muichiro).
-Dead(Shinobu).
-Dead(Kyojuro).
-Dead(Genya).
+dead(kagaya).
+dead(amane).
+dead(hinaki).
+dead(nichika).
+dead(mitsuri).
+dead(obanai).
+dead(gyomei).
+dead(muichiro).
+dead(shinobu).
+dead(kyojuro).
+dead(genya).
 
-Alive(Kiriya).
-Alive(kanata).
-Alive(Giyu).
-Alive(Sanemi).
-Alive(kanae).
-Alive(Sakonji).
-Alive(Jigoro).
-Alive(Shinjuro).
-Alive(Tengen).
-Alive(Kanao).
-Alive(Tanjiro).
-Alive(Zenitsu).
-Alive(Inosuke).
-Alive(Murata).
-Alive(Ozaki).
-Alive(Aoi).
-Alive(Sumi).
-Alive(Kiyo).
-Alive(Naho).
-Alive(Goto).
+alive(kiriya).
+alive(kanata).
+alive(giyu).
+alive(sanemi).
+alive(kanae).
+alive(sakonji).
+alive(jigoro).
+alive(shinjuro).
+alive(tengen).
+alive(kanao).
+alive(tanjiro).
+alive(zenitsu).
+alive(inosuke).
+alive(murata).
+alive(ozaki).
+alive(aoi).
+alive(sumi).
+alive(kiyo).
+alive(naho).
 
-%Teacher_A_of_B
-Teacher(Kagaya, Amane).
-Teacher(Kagaya, Hinaki).
-Teacher(Kagaya, Nichika).
-Teacher(Kagaya, Kiriya).
-Teacher(Kagaya, Kanata).
-Teacher(Zenitsu, Gyomei).
-Teacher(Shinjuro, Kyojuro).
-Teacher(Sakonji, Kanao).
-Teacher(Sakonji, Tanjiro).
-Teacher(Sakonji, Zenitsu).
-Teacher(Sakonji, Inosuke).
-Teacher(Sanemi, Genya).
-Teacher(Aoi, Sumi).
-Teacher(Aoi, Kiyo).
-Teacher(Aoi, Naho)
+%teacher_a_of_B
+teacher(kagaya,amane).
+teacher(kagaya,hinaki).
+teacher(kagaya,nichika).
+teacher(kagaya,kiriya).
+teacher(kagaya,kanata).
+teacher(zenitsu,gyomei).
+teacher(shinjuro,kyojuro).
+teacher(sakonji,kanao).
+teacher(sakonji,tanjiro).
+teacher(sakonji,zenitsu).
+teacher(sakonji,inosuke).
+teacher(sanemi,genya).
+teacher(aoi,sumi).
+teacher(aoi,kiyo).
+teacher(aoi,naho).
 
 %rank
-Rank(Kagaya, 1).
-Rank(Kanae, 1).
-Rank(Jigoro, 1).
-Rank(Kyojuro, 1).
-Rank(Shinjuro, 1).
-Rank(Sakonji, 1).
-Rank(Mitsuri, 2).
-Rank(Obanai, 2).
-Rank(Sanemi, 2).
-Rank(Gyomei, 2).
-Rank(Muichiro, 2).
-Rank(Shinobu, 2).
-Rank(Tengen, 3).
-Rank(Genya, 3).
-Rank(Amane, 4).
-Rank(Hinaki, 4).
-Rank(Nichika, 4).
-Rank(Kiriya, 4).
-Rank(Kanata, 4).
-Rank(Kanao, 4).
-Rank(Tanjiro, 4).
-Rank(Zenitsu, 4).
-Rank(Inosuke, 4).
-Rank(Aoi, 4).
-Rank(Murata, 5).
-Rank(Ozaki, 5).
-Rank(Sumi, 6).
-Rank(Kiyo, 6).
-Rank(Naho, 6).
-Rank(Goto, 6).
+rank(kagaya,1).
+rank(kanae,1).
+rank(jigoro,1).
+rank(kyojuro,1).
+rank(shinjuro,1).
+rank(sakonji,1).
+rank(mitsuri,2).
+rank(obanai,2).
+rank(sanemi,2).
+rank(gyomei,2).
+rank(muichiro,2).
+rank(shinobu,2).
+rank(tengen,3).
+rank(genya,3).
+rank(amane,4).
+rank(hinaki,4).
+rank(nichika,4).
+rank(kiriya,4).
+rank(kanata,4).
+rank(kanao,4).
+rank(tanjiro,4).
+rank(zenitsu,4).
+rank(inosuke,4).
+rank(aoi,4).
+rank(murata,5).
+rank(ozaki,5).
+rank(sumi,6).
+rank(kiyo,6).
+rank(naho,6).
 
-%Style
-Style(Giyu, Water).
-Style(Mitsuri, Love).
-Style(Obanai, Serpant).
-Style(Sanemi, Wind).
-Style(Gyomei, Stone).
-Style(Muichiro, Mist).
-Style(Shinobu, Insect).
-Style(Kanae, Flower).
-Style(Sakonji, Water).
-Style(Jigoro, Thunder).
-Style(Kyojuro, Flame).
-Style(Shinjuro, Flame).
-Style(Tengen, Sound).
-Style(Kanao, Flower).
-Style(Tanjiro, Sun).
-Style(Tanjiro, Water).
-Style(Zenitsu, Thunder).
-Style(Inosuke, Beast).
-Style(Murata, Water).
+%style
+style(giyu,water).
+style(mitsuri,love).
+style(obanai,serpant).
+style(sanemi,wind).
+style(gyomei,stone).
+style(muichiro,mist).
+style(shinobu,insect).
+style(kanae,flower).
+style(sakonji,water).
+style(jigoro,thunder).
+style(kyojuro,flame).
+style(shinjuro,flame).
+style(tengen,sound).
+style(kanao,flower).
+style(tanjiro,sun).
+style(tanjiro,water).
+style(zenitsu,thunder).
+style(inosuke,beast).
+style(murata,water).
 
-%Style_weak_strong
-BRank(Sun, 1).
-BRank(Water, 2).
-BRank(Moon, 2).
-BRank(Falme, 2).
-BRank(Thunder, 2).
-BRank(Ston, 2).
-BRank(Wind, 2).
-BRank(Flower, 3).
-BRank(Serpant, 3).
-BRank(Love, 3).
-BRank(Sound, 3).
-BRank(Beast, 3).
-BRank(Mist, 3).
-BRank(Insect, 4).
+%style_weak_strong
+brank(sun,1).
+brank(water,2).
+brank(moon,2).
+brank(falme,2).
+brank(thunder,2).
+brank(ston,2).
+brank(wind,2).
+brank(flower,3).
+brank(serpant,3).
+brank(love,3).
+brank(sound,3).
+brank(beast,3).
+brank(mist,3).
+brank(insect,4).
+
+%rule
+find_max([R], R).
+find_max([X|Xs], R):- find_max(Xs, T), (X > T -> R = X ; R = T). %find_max_from_list
+highest_rank(X,Y) :- rank_stud_in_teacher(X,A), find_max(A, Y). %find_max_num
+list_stu(X,Y) :- findall(A, (teacher(X,A)), Y). %find_all_stundent_in_teacher
+rank_stud_in_teacher(X,Y) :- findall(B, (teacher(X,A), rank(A,B)), Y). %list_of_rank_in_that_teacher
 
 
+same_teacher_style(X,Y) :- demonslayer(X), demonslayer(Y), teacher(X,Z), style(Z,Y).
+higher_rank(X,Y) :- demonslayer(X), demonslayer(Y), X\=Y, rank(X,A), rank(Y,B), A>B.
+same_teacher_higher(X,Y,Z) :- demonslayer(X), demonslayer(Y), demonslayer(Z), teacher(X,Y), teacher(X,Z), higherrank(Y,Z).
