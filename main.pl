@@ -132,3 +132,21 @@ Style(Tanjiro, Water).
 Style(Zenitsu, Thunder).
 Style(Inosuke, Beast).
 Style(Murata, Water).
+
+%Style_weak_strong
+BRank(Sun, 1).
+BRank(Water, 2).
+BRank(Moon, 2).
+BRank(Falme, 2).
+BRank(Thunder, 2).
+BRank(Ston, 2).
+BRank(Wind, 2).
+BRank(Flower, 3).
+BRank(Serpant, 3).
+BRank(Love, 3).
+BRank(Sound, 3).
+BRank(Beast, 3).
+BRank(Mist, 3).
+BRank(Insect, 4).
+
+
