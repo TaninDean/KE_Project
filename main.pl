@@ -61,6 +61,14 @@ alive(sumi).
 alive(kiyo).
 alive(naho).
 
+%list_teacher
+isteacher(kagaya).
+isteacher(zenitsu).
+isteacher(shinjuro).
+isteacher(sakonji).
+isteacher(sanemi).
+isteacher(aoi).
+
 %teacher_a_of_B
 teacher(kagaya,amane).
 teacher(kagaya,hinaki).
@@ -146,18 +154,32 @@ brank(beast,3).
 brank(mist,3).
 brank(insect,4).
 
+%sense_ability
+sense(zenitsu, hearing).
+sense(gyomei, hearing).
+sense(tengen, hearing).
+sense(tanjiro, smell).
+sense(sakonji, smell).
+sense(inosuke, touch).
+sense(kanao, sight).
+sense(genya, sight).
+
 %rule
 find_max([R], R).
 find_max([X|Xs], R):- find_max(Xs, T), (X > T -> R = X ; R = T). %find_max_from_list
 find_min([R], R).
 find_min([X|Xs], R):- find_min(Xs, T), (X < T -> R = X ; R = T). %find_max_from_list
+
 highest_rank(X,Y) :- rank_stud_in_teacher(X,A), find_min(A,Y). %find_max_num
 lowest_rank(X,Y) :- rank_stud_in_teacher(X,A), find_max(A,Y). %find_min_num
 list_stu(X,Y) :- findall(A, (teacher(X,A)), Y). %find_all_stundent_in_teacher
 rank_stud_in_teacher(X,Y) :- findall(B, (teacher(X,A), rank(A,B)), Y). %list_of_rank_in_that_teacher
 
-
 same_teacher_style(X,Y) :- teacher(X,Z), style(Z,Y).
 higher_rank(X,Y) :- rank(X,A), rank(Y,B), A>B.
 same_teacher_higher(X,Y,Z) :- teacher(X,Y), teacher(X,Z), higherrank(Y,Z).
 most_rank_in_teacher(X,Y) :- lowest_rank(X,A), rank(Y,A), teacher(X,Y).
+higher_stud_rank(X,Y) :- highest_rank(X,A), highest_rank(Y,B), A>B.
+who_have_stud_higher_rank(X,Y) :- isteacher(Y), highest_rank(X,A), highest_rank(Y,B), A>B.
+who_have_stud_lower_rank(X,Y) :- isteacher(Y), highest_rank(X,A), highest_rank(Y,B), A<B.
+same_teacher_and_sense(X,Y) :- teacher(Z,X), teacher(Z,Y), sense(X,C), sense(Y,D), C==D,
