@@ -182,4 +182,5 @@ most_rank_in_teacher(X,Y) :- lowest_rank(X,A), rank(Y,A), teacher(X,Y).
 higher_stud_rank(X,Y) :- highest_rank(X,A), highest_rank(Y,B), A>B.
 who_have_stud_higher_rank(X,Y) :- isteacher(Y), highest_rank(X,A), highest_rank(Y,B), A>B.
 who_have_stud_lower_rank(X,Y) :- isteacher(Y), highest_rank(X,A), highest_rank(Y,B), A<B.
-same_teacher_and_sense(X,Y) :- teacher(Z,X), teacher(Z,Y), sense(X,C), sense(Y,D), C==D,
+same_teacher_sense(X,Y) :- teacher(X,A), sense(A,Y).
+same_style_sense(X,Y) :- demonslayer(A), style(A,Y), X==Y.
