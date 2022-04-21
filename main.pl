@@ -170,10 +170,16 @@ find_max([X|Xs], R):- find_max(Xs, T), (X > T -> R = X ; R = T). %find_max_from_
 find_min([R], R).
 find_min([X|Xs], R):- find_min(Xs, T), (X < T -> R = X ; R = T). %find_max_from_list
 
+list_max(L, Max) :- select(Max, L, Rest), \+ (member(E, Rest), E < Max).
+list_max_rank_in_teacher(X,Y) :- rank_stud_in_teacher(X,A), findall(B,list_max(A,B), Y). %list_of_max_rank_in_teacher
 highest_rank(X,Y) :- rank_stud_in_teacher(X,A), find_min(A,Y). %find_max_num
 lowest_rank(X,Y) :- rank_stud_in_teacher(X,A), find_max(A,Y). %find_min_num
+count([],0).
+count([_|A],B) :- count(A,C), B is C + 1. %count_function
+max_list(X,Y) :- list_max_rank_in_teacher(X,A), count(A,Y). %number_of_max_rank
 list_stu(X,Y) :- findall(A, (teacher(X,A)), Y). %find_all_stundent_in_teacher
 rank_stud_in_teacher(X,Y) :- findall(B, (teacher(X,A), rank(A,B)), Y). %list_of_rank_in_that_teacher
+
 
 same_teacher_style(X,Y) :- teacher(X,Z), style(Z,Y).
 higher_rank(X,Y) :- rank(X,A), rank(Y,B), A>B.
@@ -184,3 +190,5 @@ who_have_stud_higher_rank(X,Y) :- isteacher(Y), highest_rank(X,A), highest_rank(
 who_have_stud_lower_rank(X,Y) :- isteacher(Y), highest_rank(X,A), highest_rank(Y,B), A<B.
 same_teacher_sense(X,Y) :- teacher(X,A), sense(A,Y).
 same_style_sense(X,Y) :- demonslayer(A), style(A,Y), X==Y.
+teacher_who_have_higher_stu_rank(X,Y) :- isteacher(Y), highest_rank(X,A), highest_rank(Y,B), A>B.
+teacher_who_have_higher_stu_rank(X,Y) :- isteacher(Y), highest_rank(X,A), highest_rank(Y,B), A==B, max_list(X,C), max_list(Y,D), D>C.
