@@ -196,3 +196,5 @@ teacher_who_have_higher_stu_rank(X,Y) :- isteacher(X), isteacher(Y), highest_ran
 teacher_who_have_higher_stu_rank(X,Y) :- isteacher(X), isteacher(Y), highest_rank(X,A), highest_rank(Y,B), A==B, max_list(X,C), max_list(Y,D), D>C.
 find_the_most_sense_from_same_teacher(X,Y) :- findall(A, same_teacher_sense(X,A), C), max_element_count(Y,N,C).
 find_which_teacher_that_have_student_higher_rank(X,Y) :- higher_rank(X,A), teacher(Y,A).
+what_sense_of_teacher_who_have_stud_higher_rank(X,Y) :- isteacher(X), who_have_stud_higher_rank(X,A), teacher(A,B), sense(B,Y).
+what_sense_of_teacher_who_have_stud_lowerer_rank(X,Y) :- isteacher(X), who_have_stud_lower_rank(X,A), teacher(A,B), sense(B,Y).
