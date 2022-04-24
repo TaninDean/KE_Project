@@ -168,7 +168,7 @@ sense(genya, sight).
 find_max([R], R).
 find_max([X|Xs], R):- find_max(Xs, T), (X > T -> R = X ; R = T). %find_max_from_list
 find_min([R], R).
-find_min([X|Xs], R):- find_min(Xs, T), (X < T -> R = X ; R = T). %find_max_from_list
+find_min([X|Xs], R):- find_min(Xs, T), (X < T -> R = X ; R = T). %find_min_from_list
 
 list_max(L, Max) :- select(Max, L, Rest), \+ (member(E, Rest), E < Max).
 list_max_rank_in_teacher(X,Y) :- rank_stud_in_teacher(X,A), findall(B,list_max(A,B), Y). %list_of_max_rank_in_teacher
@@ -198,3 +198,4 @@ find_the_most_sense_from_same_teacher(X,Y) :- findall(A, same_teacher_sense(X,A)
 find_which_teacher_that_have_student_higher_rank(X,Y) :- higher_rank(X,A), teacher(Y,A).
 what_sense_of_teacher_who_have_stud_higher_rank(X,Y) :- isteacher(X), who_have_stud_higher_rank(X,A), teacher(A,B), sense(B,Y).
 what_sense_of_teacher_who_have_stud_lowerer_rank(X,Y) :- isteacher(X), who_have_stud_lower_rank(X,A), teacher(A,B), sense(B,Y).
+strongest_style_in_that_teacher(X,Y) :- findall(A, teacher(X,A), B), findall(D, (member(C,B),style(C,D)), E), findall(F, (member(G,E), brank(G,F)), H), find_min(H,Y).
