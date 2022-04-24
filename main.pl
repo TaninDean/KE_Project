@@ -180,6 +180,8 @@ max_list(X,Y) :- list_max_rank_in_teacher(X,A), count(A,Y). %number_of_max_rank
 list_stu(X,Y) :- findall(A, (teacher(X,A)), Y). %find_all_stundent_in_teacher
 rank_stud_in_teacher(X,Y) :- findall(B, (teacher(X,A), rank(A,B)), Y). %list_of_rank_in_that_teacher
 
+element_count(X,N,L) :- aggregate(count,member(X,L),N). %count_element_in_list
+max_element_count(X,N,L) :- aggregate(max(N1,X1),element_count(X1,N1,L),max(N,X)). %find_max_element_list
 
 same_teacher_style(X,Y) :- teacher(X,Z), style(Z,Y).
 higher_rank(X,Y) :- rank(X,A), rank(Y,B), A>B.
@@ -192,3 +194,5 @@ same_teacher_sense(X,Y) :- teacher(X,A), sense(A,Y).
 same_style_sense(X,Y) :- demonslayer(A), style(A,Y), X==Y.
 teacher_who_have_higher_stu_rank(X,Y) :- isteacher(X), isteacher(Y), highest_rank(X,A), highest_rank(Y,B), A>B.
 teacher_who_have_higher_stu_rank(X,Y) :- isteacher(X), isteacher(Y), highest_rank(X,A), highest_rank(Y,B), A==B, max_list(X,C), max_list(Y,D), D>C.
+find_the_most_sense_from_same_teacher(X,Y) :- findall(A, same_teacher_sense(X,A), C), max_element_count(Y,N,C).
+find_which_teacher_that_have_student_higher_rank(X,Y) :- higher_rank(X,A), teacher(Y,A).
