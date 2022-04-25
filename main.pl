@@ -202,6 +202,5 @@ teacher_who_have_higher_stu_rank(X,Y) :- isteacher(X), isteacher(Y), highest_ran
 find_the_most_sense_from_same_teacher(X,Y) :- findall(A, same_teacher_sense(X,A), C), max_element_count(Y,N,C).
 find_which_teacher_that_have_student_higher_rank(X,Y) :- higher_rank(X,A), teacher(Y,A).
 what_sense_of_teacher_who_have_stud_higher_rank(X,Y) :- isteacher(X), who_have_stud_higher_rank(X,A), teacher(A,B), sense(B,Y).
-what_sense_of_teacher_who_have_stud_lowerer_rank(X,Y) :- isteacher(X), who_have_stud_lower_rank(X,A), teacher(A,B), sense(B,Y).
-strongest_style_in_that_teacher(X,Y) :- findall(A, teacher(X,A), B), findall(D, (member(C,B),style(C,D)), E), findall(F, (member(G,E), brank(G,F)), H), find_min(H,Y).
-weakest_style_in_that_teacher(X,Y) :- findall(A, teacher(X,A), B), findall(D, (member(C,B),style(C,D)), E), findall(F, (member(G,E), brank(G,F)), H), find_max(H,Y).
+what_sense_of_teacher_who_have_stud_lower_rank(X,Y) :- isteacher(X), who_have_stud_lower_rank(X,A), teacher(A,B), sense(B,Y).
+strongest_style_in_that_teacher(X,Y) :- findall(A, teacher(X,A), B), findall(D, (member(C,B),style(C,D)), E), findall(F, (member(G,E), brank(G,F)), H), find_min(H,M), brank(Y,K), K==M.
