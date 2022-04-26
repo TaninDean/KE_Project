@@ -190,7 +190,7 @@ rank_stud_in_teacher(X,Y) :- findall(B, (teacher(X,A), rank(A,B)), Y). %list_of_
 element_count(X,N,L) :- aggregate(count,member(X,L),N). %count_element_in_list
 max_element_count(X,N,L) :- aggregate(max(N1,X1),element_count(X1,N1,L),max(N,X)). %find_max_element_list
 swap(P, X, Y) :-  permutation([X,Y], [X1,Y1]), call(P, Y1, X1).
-opposite(X, Y) :- swap(teacher, X, Y).
+opposite(X,Y,Z) :- swap(X, Y, Z).
 
 student_of(X,Y) :- isteacher(Y), teacher(Y,A), X==A. 
 same_teacher(X,Y) :- isteacher(Z), teacher(Z,X), teacher(Z,Y), X\=Y.
@@ -212,5 +212,6 @@ find_the_most_style_from_same_teacher(X,Y) :- findall(A, same_teacher_style(X,A)
 find_which_teacher_that_have_student_higher_rank(X,Y) :- higher_rank(X,A), teacher(Y,A).
 what_sense_of_teacher_who_have_stud_higher_rank(X,Y) :- isteacher(X), teacher_who_have_higher_stu_rank(X,A), teacher(A,B), sense(B,Y).
 what_sense_of_teacher_who_have_stud_lower_rank(X,Y) :- isteacher(X), who_have_stud_lower_rank(X,A), teacher(A,B), sense(B,Y).
-strongest_style_in_that_teacher(X,Y) :- findall(A, teacher(X,A), B), findall(D, (member(C,B),style(C,D)), E), findall(F, (member(G,E), brank(G,F)), H), find_min(H,M), brank(Y,K), K==M, sort(E,U), member(Y,U).
+strongest_style_in_that_teacher(X,Y) :- list_stu(X,B), findall(D, (member(C,B),style(C,D)), E), findall(F, (member(G,E), brank(G,F)), H), find_min(H,M), brank(Y,K), K==M, sort(E,U), member(Y,U).
 who_have_stu_stronger_style_of_all_teacher(X,Y) :- isteacher(Y), strongest_style_in_that_teacher(X,A), strongest_style_in_that_teacher(Y,B), brank(A,C), brank(B,D), C>D.
+stronger_demonslayer(X,Y) :- demonslayer(X), demonslayer(Y), rank(X,A), rank(Y,B), A>B, style(X,C), style(Y,D), brank(C,E), brank(D,F), E>F.
