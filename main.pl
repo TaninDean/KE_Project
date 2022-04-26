@@ -137,6 +137,14 @@ style(tanjiro,water).
 style(zenitsu,thunder).
 style(inosuke,beast).
 style(murata,water).
+style(amane, flower).
+style(hinaki, flower).
+style(nichika, flower).
+style(kiriya, flower).
+style(kanata, flower).
+style(sumi, flower).
+style(kiyo, flower).
+style(naho, flower).
 
 %style_weak_strong
 brank(sun,1).
@@ -179,10 +187,8 @@ count([_|A],B) :- count(A,C), B is C + 1. %count_function
 max_list(X,Y) :- list_max_rank_in_teacher(X,A), count(A,Y). %number_of_max_rank
 list_stu(X,Y) :- findall(A, (teacher(X,A)), Y). %find_all_stundent_in_teacher
 rank_stud_in_teacher(X,Y) :- findall(B, (teacher(X,A), rank(A,B)), Y). %list_of_rank_in_that_teacher
-
 element_count(X,N,L) :- aggregate(count,member(X,L),N). %count_element_in_list
 max_element_count(X,N,L) :- aggregate(max(N1,X1),element_count(X1,N1,L),max(N,X)). %find_max_element_list
-
 swap(P, X, Y) :-  permutation([X,Y], [X1,Y1]), call(P, Y1, X1).
 opposite(X, Y) :- swap(teacher, X, Y).
 
@@ -204,6 +210,7 @@ teacher_who_have_higher_stu_rank(X,Y) :- isteacher(X), isteacher(Y), highest_ran
 find_the_most_sense_from_same_teacher(X,Y) :- findall(A, same_teacher_sense(X,A), C), max_element_count(Y,N,C).
 find_the_most_style_from_same_teacher(X,Y) :- findall(A, same_teacher_style(X,A), C), max_element_count(Y,N,C).
 find_which_teacher_that_have_student_higher_rank(X,Y) :- higher_rank(X,A), teacher(Y,A).
-what_sense_of_teacher_who_have_stud_higher_rank(X,Y) :- isteacher(X), who_have_stud_higher_rank(X,A), teacher(A,B), sense(B,Y).
+what_sense_of_teacher_who_have_stud_higher_rank(X,Y) :- isteacher(X), teacher_who_have_higher_stu_rank(X,A), teacher(A,B), sense(B,Y).
 what_sense_of_teacher_who_have_stud_lower_rank(X,Y) :- isteacher(X), who_have_stud_lower_rank(X,A), teacher(A,B), sense(B,Y).
-strongest_style_in_that_teacher(X,Y) :- findall(A, teacher(X,A), B), findall(D, (member(C,B),style(C,D)), E), findall(F, (member(G,E), brank(G,F)), H), find_min(H,M), brank(Y,K), K==M.
+strongest_style_in_that_teacher(X,Y) :- findall(A, teacher(X,A), B), findall(D, (member(C,B),style(C,D)), E), findall(F, (member(G,E), brank(G,F)), H), find_min(H,M), brank(Y,K), K==M, sort(E,U), member(Y,U).
+who_have_stu_stronger_style_of_all_teacher(X,Y) :- isteacher(Y), strongest_style_in_that_teacher(X,A), strongest_style_in_that_teacher(Y,B), brank(A,C), brank(B,D), C>D.
